@@ -1,4 +1,5 @@
 require 'fast_gettext/cache'
+require 'fast_gettext/cluster_cache'
 
 module FastGettext
   # Responsibility:
@@ -35,7 +36,7 @@ module FastGettext
     [
       [:default_available_locales, "nil"],
       [:default_text_domain, "nil"],
-      [:cache_class, "FastGettext::Cache"]
+      [:cache_class, "FastGettext::ClusterCache"]
     ].each do |name, default|
       eval <<-Ruby
         @@#{name} = #{default}
