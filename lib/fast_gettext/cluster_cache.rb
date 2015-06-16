@@ -99,7 +99,7 @@ module FastGettext
 
     def translations_timestamp_changed?
       return false if @local_timestamp == false || @remote_timestamp == false
-      return false if Time.now.to_i < @ttl
+      return false if Time.now < @ttl
       update_ttl!
       get_remote_timestamp!
       return false unless @remote_timestamp # false or nil
