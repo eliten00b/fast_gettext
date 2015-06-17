@@ -55,7 +55,7 @@ module FastGettext
     private
 
     def update_ttl!
-      @ttl = Time.now - 60.seconds
+      @ttl = Time.now + 60.seconds
     end
 
     def get_remote_timestamp!
